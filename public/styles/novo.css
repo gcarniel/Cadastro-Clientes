@@ -1,0 +1,29 @@
+#form-client {
+    width: 70vw;
+    background-color: var(--color-secondary-background);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.inputs > label {
+    color: white;
+    margin-left: 5px;
+}
+
+.inputs > input {
+    border-radius: 2px;
+}
+
+.inputs > input:active {
+    border-radius: 2px;
+}
+
+a {
+    color: white;
+}

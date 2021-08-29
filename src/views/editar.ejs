@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#41414C" />
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/header.css">
+
+    <title>Cadastro de Clientes</title>
+</head>
+
+<body>
+    <div class="container">
+        <%-  include('parts/header', {title: 'Editando Cliente' , button: 'Voltar' , urlButton: '/' }) %>
+    </div>
+
+    <div class="client-list">
+        <form id="form-client" method="POST" action="/">
+            <div class="separator light"></div>
+
+            <div class="inputs name">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" value="<%= client.nome %>" />
+            </div>
+
+            <div class="inputs name">
+                <label for="nascimento">Nascimento</label>
+                <input type="text" id="nascimento" name="nascimento" />
+            </div>
+
+            <div class="inputs name">
+                <label for="tel">Telefone</label>
+                <input type="text" id="tel" name="tel" />
+                <span>
+                    <button>+ Telefone</button>
+                </span>
+            </div>
+
+            <div class="inputs name">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" name="endereco" />
+                <span>
+                    <button>+ Endereço</button>
+                </span>
+            </div>
+
+            <div class="inputs name">
+                <label for="redes">Redes Sociais</label>
+                <input type="text" id="redes" name="redes" />
+            </div>
+
+            <div class="inputs name">
+                <label for="CPF">CPF</label>
+                <input type="text" id="CPF" name="CPF" />
+            </div>
+
+            <div class="inputs name">
+                <label for="RG">RG</label>
+                <input type="text" id="RG" name="RG" />
+            </div>
+
+            <button type="submit" form="form-client">Gravar</button>
+        </form>
+    </div>
+</body>
+
+</html>
