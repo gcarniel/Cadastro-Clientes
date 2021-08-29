@@ -9,29 +9,31 @@ module.exports = {
 
     async showClient(req, res) {
         const idClient = req.params.id
-        
+
         const client = await Client.getClient(idClient)
-
-        console.log(client)
-
-        return res.render('editar', { client })
+        
+        const dataClient = client[0]
+        
+        return res.render('editar', { dataClient })
     },
-
+    
     async updateClient(req, res) {
-        const idClient = req.params.id
+    const idClient = req.params.id
 
-        console.log(idClient)
-
-        // await Client.deleteClient(idClient)
-
-        return res.render('editar')
-    },
-
-    async deleteClient(req, res) {
-        const idClient = req.params.id
-
-        await Client.deleteClient(idClient)
-
-        return res.redirect('/')
+    const updatedClient = {
+        ...req.body
     }
+
+    await Client.updateClient(idClient, updatedClient)
+
+    return res.redirect('/editar/' + idClient)
+},
+
+async deleteClient(req, res) {
+    const idClient = req.params.id
+
+    await Client.deleteClient(idClient)
+
+    return res.redirect('/')
+}
 }

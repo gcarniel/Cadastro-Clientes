@@ -8,7 +8,9 @@
     <meta name="theme-color" content="#41414C" />
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/modal.css">
     <link rel="stylesheet" href="/styles/header.css">
+  
 
     <title>Cadastro de Clientes</title>
 </head>
@@ -41,10 +43,10 @@
                             <%= cliente.telefone %>
                         </td>
                         <td>
-                            <a class="edit" href="/editar/<%= cliente.id %> " >
+                            <a href="/editar/<%= cliente.id %>">
                                 <img src="/images/edit.svg" alt="editar" />
                             </a>
-                            <a href="/">
+                            <a class="button-delete">
                                 <img class="trash" src="/images/trash.svg" alt="delete" />
                             </a>
                         </td>
@@ -53,6 +55,21 @@
             </tbody>
         </table>
     </div>
+
+    <div class="modal-wrapper">
+        <div class="modal">
+            <img src="/images/trash-48.svg" alt="Excluir Job" title="Excluir Job" />
+            <h3>Excluir Cliente</h3>
+            <p>Quer mesmo excluir esse cliente?</p>
+            <footer>
+                <a class="button gray" href="#">Cancelar</a>
+                <button class="button red" type="submit" form="delete-job">Excluir Job</button>
+            </footer>
+        </div>
+        <form method="post" action="/delete" id="delete-job"></form>
+    </div>
+
+    <script src="scripts/modal.js"></script>
 
 </body>
 

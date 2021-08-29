@@ -9,7 +9,6 @@ module.exports = {
         await db.close()
 
         return clients
-
     },
 
     async getClient(idClient) {
@@ -20,7 +19,6 @@ module.exports = {
         await db.close()
 
         return client
-
     },
 
     async insertClient(client) {
@@ -47,9 +45,9 @@ module.exports = {
         const db = await Database()
 
         await db.run(`UPDATE clientes SET
-        nome = ${client.nome},
-        nascimento = ${client.nascimento},
-        cpf = ${client.cpf},
+        nome = '${client.nome}',
+        nascimento = '${client.nascimento}',
+        cpf = '${client.cpf}',
         rg = ${client.rg}
         WHERE id = ${idClient}`)
 

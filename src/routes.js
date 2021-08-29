@@ -9,6 +9,8 @@ const ClientController = require('./controller/clientController')
 routes.get('/', ClientController.showClients )
 
 routes.get('/editar/:id', ClientController.showClient )
+routes.post('/editar/:id', ClientController.updateClient )
+routes.post('/deletar/:id', ClientController.deleteClient )
 
 routes.get('/novo', (req, res) => {
     return res.render('novo')
