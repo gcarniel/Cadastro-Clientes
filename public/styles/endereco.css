@@ -1,0 +1,24 @@
+.client-address{
+    margin-top: 10px;
+    color: var(--color-text);
+}
+
+.inputs-address {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputs-address label {
+    display: inline-block;
+    /* width: 20%; */
+    min-width: 50px;
+}
+
+.inputs-address span {
+    width: 100%;
+}
+
+.inputs-address input,
+.inputs-address select {
+    width: 100%;
+}

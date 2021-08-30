@@ -11,11 +11,15 @@ routes.get('/', ClientController.showClients )
 routes.get('/editar/:id', ClientController.showClient )
 routes.post('/editar/:id', ClientController.updateClient )
 routes.post('/deletar/:id', ClientController.deleteClient )
+routes.post('/novo', ClientController.insertClient )
 
 routes.get('/novo', (req, res) => {
     return res.render('novo')
 })
 
+routes.get('/endereco', (req, res) => {
+    return res.render('endereco')
+} )
 
 // routes.post('/job', JobController.save)
 // routes.get('/job/:id', JobController.show)

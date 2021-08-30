@@ -22,7 +22,7 @@
 }
 
 .modal {
-  background: #F0F2F5;
+  background: #a7a9ad;
 
   border-radius: 0.313rem;
 
@@ -33,14 +33,9 @@
   color: var(--color-card-content);
 }
 
-.modal img {
-  margin-bottom: 2rem;
-}
-
 .modal h3 {
   color: var(--color-card-title);
 
-  font-family: IBM Plex Sans;
   font-weight: 600;
   font-size: 2rem;
   line-height: 2.625rem;
@@ -52,11 +47,15 @@
   margin-bottom: 2rem;
 }
 
+.modal a {
+  color: white;
+  margin-right: 10px;
+}
+
 .modal footer button {
   padding: 0.75rem 3rem;
   border-radius: 0.313rem;
 
-  font-family: IBM Plex Sans;
   font-weight: 700;
   font-size: 0.875rem;
   line-height: 1.625rem;
@@ -65,10 +64,6 @@
   transition: all .2s;
 
   cursor:pointer;
-}
-
-.modal footer button + button {
-  margin-left: .5rem;
 }
 
 .modal footer button:nth-child(1) {

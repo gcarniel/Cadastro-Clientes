@@ -1,6 +1,16 @@
 const Database = require('../db/config')
 
 module.exports = {
+    async getID() {
+        const db = await Database()
+
+        const id = await db.get('SELECT MAX(id) as id FROM clientes')
+
+        await db.close()
+
+        return id 
+    },
+
     async getClients() {
         const db = await Database()
 
@@ -24,14 +34,17 @@ module.exports = {
     async insertClient(client) {
         const db = await Database()
 
-        await db.run(`INSERT INTO jobs (
+        const { id } = await this.getID()
+        const nextId = id + 1
+
+        await db.run(`INSERT INTO clientes (
             id,
             nome,
             nascimento,
             cpf,
             rg
             ) VALUES (
-            ${client.id},
+            ${nextId},
             '${client.nome}',
             '${client.nascimento}',
             '${client.cpf}',

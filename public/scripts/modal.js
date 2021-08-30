@@ -1,26 +1,21 @@
 const wrapper = document.querySelector('.modal-wrapper');
 const element = document.querySelector('.modal');
 const cancelButton = element.querySelector("footer .button:nth-child(1)")
-const deleteButton = document.querySelectorAll('.button-delete')
 
-cancelButton.addEventListener('click', close)
-
-deleteButton.onClick(() => console.log('oi'))
-
-function open() {
-  document.addEventListener('keydown', closeOnEscape)
-  wrapper.classList.add('on')
-  element.classList.add(...animateClasses)
-}
-
-function close() {
-  document.removeEventListener('keydown', closeOnEscape)
+cancelButton.addEventListener('click', () => {
   wrapper.classList.remove('on')
-  element.classList.remove(...animateClasses)
-}
+})
 
-function closeOnEscape({ key }) {
-  if (key == 'Escape') {
-    close()
-  }
+const datas = document.querySelectorAll('.datas-client')
+const deleteForm = document.querySelector('#delete-cliente')
+
+for (let data of datas) {
+  const id = data.dataset.id
+
+  const deleteButton = data.querySelector('.button-delete')
+
+  deleteButton.addEventListener('click', () => {
+    wrapper.classList.add('on')
+    deleteForm.setAttribute('action', '/deletar/' + id)
+  })
 }

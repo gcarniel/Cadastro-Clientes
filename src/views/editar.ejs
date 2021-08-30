@@ -25,12 +25,12 @@
 
             <div class="inputs name">
                 <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" value="<%= dataClient.nome %>" />
+                <input type="text" id="nome" name="nome" value="<%= dataClient.nome %>" required />
             </div>
 
             <div class="inputs name">
                 <label for="nascimento">Nascimento</label>
-                <input type="text" id="nascimento" name="nascimento" value="<%= dataClient.nascimento %>"/>
+                <input type="date" id="nascimento" name="nascimento" value="<%= dataClient.nascimento %>" required/>
             </div>
 
             <!-- <div class="inputs name">
@@ -56,12 +56,12 @@
 
             <div class="inputs name">
                 <label for="CPF">CPF</label>
-                <input type="text" id="cpf" name="cpf" value="<%= dataClient.cpf %>"/>
+                <input type="text" id="cpf" name="cpf" value="<%= dataClient.cpf %>" required/>
             </div>
 
             <div class="inputs name">
                 <label for="RG">RG</label>
-                <input type="text" id="rg" name="rg" value="<%= dataClient.rg %>"/>
+                <input type="text" id="rg" name="rg" value="<%= dataClient.rg %>" required/>
             </div>
 
             <button type="submit" form="form-client">Gravar</button>
