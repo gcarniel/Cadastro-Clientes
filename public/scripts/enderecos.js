@@ -1,14 +1,8 @@
-const buttonSaveAddress = document.querySelector('#save-address')
-const inputsAddress = document.querySelectorAll('.client-address > .inputs-address input')
-console.log(inputsAddress)
+const saveAndNewAddress = document.querySelector('#save-new-address')
+const formAddress = document.querySelector('#form-client')
 
-buttonSaveAddress.addEventListener('click', () => {
-    const address = []
-    inputsAddress.forEach(input => {
-        const key = input.name
-        const value = input.value
-        console.log(key, value)
-        return address.push({[key]: value})
-    })
-    console.log(address)
+saveAndNewAddress.addEventListener('click', () => {
+    console.log('endereco')
+    formAddress.setAttribute('method', 'GET')
+    formAddress.setAttribute('action', '/contato')
 })

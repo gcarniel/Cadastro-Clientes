@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/index.css">
     <link rel="stylesheet" href="/styles/novo.css">
-    <link rel="stylesheet" href="/styles/endereco.css">
+    <link rel="stylesheet" href="/styles/contato.css">
     <link rel="stylesheet" href="/styles/header.css">
 
     <title>Cadastro de Clientes</title>
@@ -17,17 +17,17 @@
 
 <body>
     <div class="container">
-        <%- include('parts/header', {title: 'Endereço do Cliente' , button: 'Home' , urlButton: '/' }) %>
+        <%- include('parts/header', {title: 'Contato do Cliente' , button: 'Home' , urlButton: '/' }) %>
     </div>
 
     <div class="client-list">
-        <form id="form-client" method="POST" action="/endereco">
-            <div class="client-address">
+        <form id="form-client" method="POST" action="/contato">
+            <div class="client-contact">
 
                 <div class="separator light"></div>
-                <h2>Endereço</h2>
+                <h2>Contato</h2>
 
-                <div class="inputs-address">
+                <div class="inputs-contact">
                     <span>
                         <label for="tipo">Tipo</label>
                         <select name="tipo" id="tipo" required>
@@ -38,36 +38,21 @@
                         </select>
                     </span>
                     <span>
-                        <label for="rua">Rua</label>
-                        <input type="text" id="rua" name="rua" />
+                        <label for="ddd">DDD</label>
+                        <input type="text" id="ddd" name="ddd" maxlength="2" />
                     </span>
                     <span>
                         <label for="numero">Número</label>
-                        <input type="text" id="numero" name="numero" />
-                    </span>
-                </div>
-
-                <div class="inputs-address">
-                    <span>
-                        <label for="bairro">Bairro</label>
-                        <input type="text" id="bairro" name="bairro" />
-                    </span>
-                    <span>
-                        <label for="cidade">Cidade</label>
-                        <input type="text" id="cidade" name="cidade" />
-                    </span>
-                    <span>
-                        <label for="cep">CEP</label>
-                        <input type="text" id="cep" name="cep" />
+                        <input type="text" id="numero" name="numero" maxlength="10" />
                     </span>
                 </div>
             </div>
             <div class="separator light"></div>
-            <button id="save-new-address" type="submit" form="form-client">Gravar</button>
+            <button id="save-new-contact" type="submit" form="form-client">Gravar</button>
             <button type="submit" form="form-client">Gravar e Novo Endereço</button>
             </form>
 
-            <script src="scripts/enderecos.js"></script>
+            <script src="scripts/contatos.js"></script>
 </body>
 
 </html>

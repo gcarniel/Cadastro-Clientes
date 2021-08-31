@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#41414C" />
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/novo.css">
+    <link rel="stylesheet" href="/styles/redes.css">
+    <link rel="stylesheet" href="/styles/header.css">
+
+    <title>Cadastro de Clientes</title>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('parts/header', {title: 'Redes Sociais do Cliente' , button: 'Home' , urlButton: '/' }) %>
+    </div>
+
+    <div class="client-list">
+        <form id="form-client" method="POST" action="/redes">
+            <div class="client-network">
+
+                <div class="separator light"></div>
+                <h2>Contato</h2>
+
+                <div class="inputs-network">
+                    <span>
+                        <label for="twitter">Twitter</label>
+                        <input type="text" id="twitter" name="twitter" />
+                    </span>
+                    <span>
+                        <label for="facebook">Facebook</label>
+                        <input type="text" id="facebook" name="facebook" />
+                    </span>
+                    <span>
+                        <label for="linkedin">Linkedin</label>
+                        <input type="text" id="linkedin" name="linkedin" />
+                    </span>
+                    <span>
+                        <label for="instagran">Instagran</label>
+                        <input type="text" id="instagran" name="instagran" />
+                    </span>
+                </div>
+            </div>
+            <div class="separator light"></div>
+            <button type="submit" form="form-client">Gravar</button>
+            </form>
+</body>
+
+</html>

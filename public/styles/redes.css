@@ -1,23 +1,23 @@
-.client-address{
+.client-network{
     color: var(--color-text);
 }
 
-.inputs-address {
+.inputs-network {
     display: flex;
     justify-content: space-between;
 }
 
-.inputs-address label {
+.inputs-network label {
     display: inline-block;
     /* width: 20%; */
     min-width: 50px;
 }
 
-.inputs-address span {
+.inputs-network span {
     width: 100%;
 }
 
-.inputs-address input,
-.inputs-address select {
+.inputs-network input,
+.inputs-network select {
     width: 100%;
 }
