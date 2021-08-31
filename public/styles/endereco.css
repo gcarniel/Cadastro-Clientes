@@ -1,6 +1,10 @@
 .client-address{
-    margin-top: 10px;
     color: var(--color-text);
+    /* margin-top: 10px;
+    width: 70vw;
+    background-color: var(--color-secondary-background);
+    border-radius: 10px;
+    padding: 10px; */
 }
 
 .inputs-address {

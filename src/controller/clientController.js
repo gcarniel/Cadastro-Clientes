@@ -24,7 +24,7 @@ module.exports = {
 
         await Client.insertClient(client)
 
-        return res.redirect('/')
+        return res.redirect('/endereco')
     },
 
     async updateClient(req, res) {
