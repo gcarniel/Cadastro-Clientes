@@ -1,4 +1,6 @@
 const Client = require('../model/client')
+const Address = require('../model/address')
+const Network = require('../model/network')
 
 module.exports = {
     async showClients(req, res) {
@@ -10,11 +12,11 @@ module.exports = {
     async showClient(req, res) {
         const idClient = req.params.id
 
-        const client = await Client.getClient(idClient)
+        const [dataClient] = await Client.getClient(idClient)
+        const dataClientAddress = await Address.getAddress(idClient)
+        const [dataNetworks] = await Network.getNetworks(idClient)
 
-        const dataClient = client[0]
-
-        return res.render('editar', { dataClient })
+        return res.render('editar', { dataClient, dataClientAddress, dataNetworks })
     },
 
     async insertClient(req, res) {
@@ -28,6 +30,7 @@ module.exports = {
     },
 
     async updateClient(req, res) {
+        console.log('update cliente', req.params, req.body)
         const idClient = req.params.id
 
         const updatedClient = {

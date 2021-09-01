@@ -24,7 +24,7 @@ module.exports = {
     async getAddress(idClient) {
         const db = await Database()
 
-        const address = await db.all(`SELECT * FROM enderecos WHERE id = ${idClient}`)
+        const address = await db.all(`SELECT * FROM enderecos WHERE id_cliente = ${idClient}`)
 
         await db.close()
 
@@ -65,12 +65,12 @@ module.exports = {
         const idClient = id
 
         await db.run(`UPDATE enderecos SET
-        tipo '${address.tipo}',
-        rua '${address.rua}',
-        numero '${address.numero}',
-        bairro '${address.bairro}',
-        cidade '${address.cidade}',
-        cep '${address.cep}',
+        tipo = '${address.tipo}',
+        rua = '${address.rua}',
+        numero = '${address.numero}',
+        bairro = '${address.bairro}',
+        cidade = '${address.cidade}',
+        cep = '${address.cep}',
         WHERE id_cliente = ${idClient} 
         AND id = ${idAddress}`)
 

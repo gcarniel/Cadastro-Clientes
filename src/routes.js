@@ -2,22 +2,25 @@ const express = require('express');
 const routes = express.Router();
 const ClientController = require('./controller/clientController')
 const AddressController = require('./controller/addressController')
+const NetworkController = require('./controller/networkController');
 
-routes.get('/', ClientController.showClients )
+routes.get('/', ClientController.showClients)
 
-routes.get('/editar/:id', ClientController.showClient )
-routes.post('/editar/:id', ClientController.updateClient )
-routes.post('/deletar/:id', ClientController.deleteClient )
+routes.get('/editar/:id', ClientController.showClient)
+routes.post('/editar/:id', ClientController.updateClient, NetworkController.updateNetwork)
+routes.post('/deletar/:id', ClientController.deleteClient)
 
-routes.post('/novo', ClientController.insertClient )
+routes.post('/novo', ClientController.insertClient)
 routes.get('/novo', (req, res) => res.render('novo'))
 
 routes.get('/endereco', (req, res) => res.render('endereco'))
-routes.post('/endereco', AddressController.insertAddress )
+routes.post('/endereco', AddressController.insertAddress)
 
 routes.get('/contato', (req, res) => res.render('contato'))
 
 routes.get('/redes', (req, res) => res.render('redes'))
+routes.post('/redes', NetworkController.insertNetwork )
+routes.post('/redes/editar/:id', NetworkController.updateNetwork)
 
 // routes.post('/job', JobController.save)
 // routes.get('/job/:id', JobController.show)

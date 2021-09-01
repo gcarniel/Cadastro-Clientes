@@ -33,9 +33,11 @@ const initDb = {
         )`);
 
         await db.exec(`CREATE TABLE redes_sociais (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            id_cliente INT,
-            rede TEXT
+            id_cliente PRIMARY KEY,
+            twitter TEXT,
+            facebook TEXT,
+            linkedin TEXT,
+            instagran TEXT
         )`);
 
         await db.run(`INSERT INTO clientes (
@@ -80,14 +82,6 @@ const initDb = {
             "comercial",
             "(44)",
             "99999999"
-        );`)
-
-        await db.run(`INSERT INTO redes_sociais (
-            id_cliente,
-            rede
-        ) VALUES (
-            1,
-            "twitter-url"
         );`)
 
         await db.close()

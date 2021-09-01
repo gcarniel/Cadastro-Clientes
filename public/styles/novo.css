@@ -1,4 +1,6 @@
-#form-client {
+#form-client,
+#form-client-address,
+#form-client-network {
     width: 70vw;
     background-color: var(--color-secondary-background);
     border-radius: 10px;
