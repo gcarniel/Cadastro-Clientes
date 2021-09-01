@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#41414C" />
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/redes.css">
+    <link rel="stylesheet" href="/styles/novo.css">
+    <link rel="stylesheet" href="/styles/endereco.css">
+
+    <title>Cadastro de Clientes</title>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('parts/header', {title: 'Editando Endereços' , button: 'Home' , urlButton: '/' }); %>
+    </div>
+
+    <div class="client-list">
+        <form id="form-client-address" method="POST">
+            <div class="client-address">
+
+                <div class="separator light"></div>
+                <label for="tipo">Endereços</label>
+                <select name="tipo" id="tipo-end-editar">
+                    <option value="">Selecione um Endereço</option>
+                    <% dataAddress.forEach( address=> { %>
+
+                        <option value="<%= address.id%>">
+                            <%=address.rua %>
+                        </option>
+
+                        <% }) %>
+                </select>
+
+            </div>
+            <button id="save-new-address" type="submit" form="form-client-address">Gravar</button>
+        </form>
+        <div class="separator light"></div>
+    </div>
+    <script src="/scripts/enderecos.js"></script>
+</body>
+
+</html>

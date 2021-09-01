@@ -17,15 +17,26 @@
 
 <body>
     <div class="container">
-        <%- include('parts/header', {title: 'Contato do Cliente' , button: 'Home' , urlButton: '/' }) %>
+        <%- include('parts/header', {title: 'Editando Contato' , button: 'Home' , urlButton: '/' }) %>
     </div>
 
     <div class="client-list">
-        <form id="form-client" method="POST" >
+        <form id="form-client-contact" method="POST">
             <div class="client-contact">
 
                 <div class="separator light"></div>
-                <h2>Contato</h2>
+                <label for="tipo">Contatos</label>
+                <select name="tipo-contact-editar" id="tipo-contact-editar">
+                    <option value="">Selecione um Contato</option>
+
+                    <% dataContact.forEach( contact=> { %>
+                        <option value="<%= contact.id%>">
+                            <%=contact.ddd %>
+                                <%=contact.numero %>
+                        </option>
+                        <% }) %>
+
+                </select>
 
                 <div class="inputs-contact">
                     <span>
@@ -46,12 +57,12 @@
                         <input type="text" id="numero" name="numero" maxlength="10" />
                     </span>
                 </div>
-            </div>
-            <div class="separator light"></div>
-            <button type="submit" form="form-client">Gravar</button>
-            </form>
 
-            <!-- <script src="scripts/contatos.js"></script> -->
+            </div>
+            <button id="save-new-contact" type="submit" form="form-client-contact">Gravar</button>
+        </form>
+
+        <script src="/scripts/contatos.js"></script>
 </body>
 
 </html>

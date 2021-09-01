@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#41414C" />
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/novo.css">
+    <link rel="stylesheet" href="/styles/redes.css">
+    <link rel="stylesheet" href="/styles/header.css">
+
+    <title>Cadastro de Clientes</title>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('parts/header', {title: 'Editando Redes Sociais' , button: 'Home' , urlButton: '/' }) %>
+    </div>
+
+    <div class="client-list">
+        <form id="form-client-network" method="POST">
+            <div class="client-network">
+
+                <div class="separator light"></div>
+                <div class="inputs-network">
+                    <span>
+                        <label for="twitter">Twitter</label>
+                        <input type="text" id="twitter" value="<%= dataNetworks.twitter %> " name="twitter"
+                            placeholder="cole link do twitter aqui" />
+                    </span>
+                    <span>
+                        <label for="facebook">Facebook</label>
+                        <input type="text" id="facebook" value="<%= dataNetworks.facebook %> " name="facebook"
+                            placeholder="cole link do facebook aqui" />
+                    </span>
+                    <span>
+                        <label for="linkedin">Linkedin</label>
+                        <input type="text" id="linkedin" value="<%= dataNetworks.linkedin %> " name="linkedin"
+                            placeholder="cole link do linkedin aqui" />
+                    </span>
+                    <span>
+                        <label for="instagran">Instagran</label>
+                        <input type="text" id="instagran" value="<%= dataNetworks.instagran %> " name="instagran"
+                            placeholder="cole link do ins aqui" />
+                    </span>
+                </div>
+            </div>
+            <div class="separator light"></div>
+            <button type="submit" form="form-client-network">Gravar</button>
+        </form>
+    </div>
+</body>
+
+</html>
