@@ -41,8 +41,6 @@ module.exports = {
         const { id } = await this.getID()
         const idClientOrNextId = idClient || id
 
-        console.log('insert ::::::', idClientOrNextId, contact)
-
         await db.run(`INSERT INTO telefones (
             id_cliente, 
             tipo,

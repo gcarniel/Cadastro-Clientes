@@ -1,6 +1,22 @@
 const Database = require('../db/config')
 
 module.exports = {
+    async existsContact(idClient, idAddress) {
+        const db = await Database()
+
+        const [address] = await db.all(`SELECT COUNT(*) as registros FROM enderecos WHERE id_cliente = ${idClient} AND id = ${idAddress}`)
+
+        console.log(address, (`SELECT COUNT(*) as registros FROM enderecos WHERE id_cliente = ${idClient} AND id = ${idAddress}`))
+
+        await db.close()
+
+        if (address.registros > 0) {
+            return true
+        }
+
+        return false
+    },
+
     async getID() {
         const db = await Database()
 
@@ -31,11 +47,11 @@ module.exports = {
         return address
     },
 
-    async insertAddress(address) {
+    async insertAddress(address, idClient) {
         const db = await Database()
 
         const { id } = await this.getID()
-        const idClient = id
+        const idClientOrNextId = idClient || id
 
         await db.run(`INSERT INTO enderecos (
             id_cliente, 
@@ -46,7 +62,7 @@ module.exports = {
             cidade,
             cep
             ) VALUES (
-            ${idClient},
+            ${idClientOrNextId},
             '${address.tipo}',
             '${address.rua}',
             '${address.numero}',
@@ -58,11 +74,8 @@ module.exports = {
         await db.close()
     },
 
-    async updateAddress(idAddress, address) {
+    async updateAddress(idClient, idAddress, address) {
         const db = await Database()
-
-        const { id } = await this.getID()
-        const idClient = id
 
         await db.run(`UPDATE enderecos SET
         tipo = '${address.tipo}',
@@ -70,7 +83,7 @@ module.exports = {
         numero = '${address.numero}',
         bairro = '${address.bairro}',
         cidade = '${address.cidade}',
-        cep = '${address.cep}',
+        cep = '${address.cep}'
         WHERE id_cliente = ${idClient} 
         AND id = ${idAddress}`)
 

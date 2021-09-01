@@ -22,13 +22,23 @@ module.exports = {
     async updateAddress(req, res) {
         const idClient = req.params.id
 
-        const updatedClient = {
+        const updatedAddress = {
             ...req.body
         }
 
-        await Address.updateClient(idClient, updatedClient)
+        const idAddress = req.body['tipo-end-editar'] === '' ? 0 : req.body['tipo-end-editar']
 
-        return res.redirect('/editar/' + idClient)
+        const existsContact = await Address.existsContact(idClient, idAddress)
+
+        console.log(existsContact, idClient, idAddress, updatedAddress)
+
+        if (existsContact) {
+            await Address.updateAddress(idClient, idAddress, updatedAddress)
+            return res.redirect('/editar/endereco/' + idClient)
+        } else {
+            await Address.insertAddress(updatedAddress, idClient)
+            return res.redirect('/')
+        }
     },
 
     async deleteAddress(req, res) {
