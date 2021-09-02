@@ -21,9 +21,9 @@
 
     <div class="client-list">
         <div class="search-client">
-            <input name="searchedclients" type="text" placeholder="Pesquisar cliente...">
+            <input id="search" class="search-client" type="text" placeholder="Pesquisar cliente..." autocomplete="off">
             <!-- <a href="/cliente">Buscar</a> -->
-            <button>Pesquisar</button>
+            <button class="button-search">Pesquisar</button>
         </div>
         <table>
             <thead>
@@ -41,14 +41,14 @@
                         <td>
                             <%= cliente.id %>
                         </td>
-                        <td>
-                            <%= cliente.nome %>
+                        <td class="name">
+                            <%=cliente.nome %>
                         </td>
                         <td>
-                            <%= cliente.nascimento %>
+                            <%=cliente.nascimento %>
                         </td>
                         <td>
-                            <a href="/editar/<%= cliente.id %>">
+                            <a href="/editar/<%=cliente.id %>">
                                 <img src="/images/edit.svg" alt="editar" />
                             </a>
                             <a href="#" class="button-delete">
@@ -57,24 +57,24 @@
                         </td>
                         <td class="networks">
                             <% if (cliente.twitter) { %>
-                                <a href="<%= cliente.twitter %>" target="_blank">
+                                <a href="<%=cliente.twitter %>" target="_blank">
                                     <img src="/images/twitter.png" alt="twitter" />
                                 </a>
                             <% } %>
 
                             <% if (cliente.facebook) { %>
-                                <a href="<%= cliente.facebook %>" target="_blank">
+                                <a href="<%=cliente.facebook %>" target="_blank">
                                     <img src="/images/facebook.png" alt="facebook" />
                                 </a>
                             <% } %>
                             <% if (cliente.linkedin) { %>
-                                <a href="<%= cliente.linkedin %>" target="_blank">
+                                <a href="<%=cliente.linkedin %>" target="_blank">
                                     <img src="/images/linkedin.png" alt="linkedin" />
                                 </a>
                             <% } %>
 
                             <% if (cliente.instagram) { %>
-                                <a href="<%= cliente.instagram %>" target="_blank">
+                                <a href="<%=cliente.instagram %>" target="_blank">
                                     <img src="/images/instagram.png" alt="instagram" />
                                 </a>
                             <% } %>
@@ -99,6 +99,7 @@
     </div>
 
     <script src="scripts/modal.js"></script>
+    <script src="scripts/index.js"></script>
 
 </body>
 
