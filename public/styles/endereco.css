@@ -21,3 +21,30 @@
 .inputs-address select {
     width: 100%;
 }
+
+#id-endereco {
+    display: none;
+}
+
+.table-aux {
+    margin-top: 10px;
+}
+
+.table-aux table tr {
+    cursor: pointer;
+}
+
+button {
+    background-color: var(--color-secondary-background);
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    color: var(--color-text);
+    margin-left: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.hidden {
+    opacity: 0;
+}

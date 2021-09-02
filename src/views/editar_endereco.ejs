@@ -18,7 +18,7 @@
 
 <body>
     <div class="container">
-        <%- include('parts/header', {title: 'Adicionar Endereço' , hasBack: true, button: 'Home' , urlButton: '/' }); %>
+        <%- include('parts/header', {title: 'Endereços' , hasBack: true, button: 'Home' , urlButton: '/' }); %>
     </div>
 
     <div class="client-list">
@@ -26,18 +26,6 @@
             <div class="client-address">
 
                 <div class="separator light"></div>
-                <label for="tipo">Endereços</label>
-                <select name="tipo-end-editar" id="tipo-end-editar">
-                    <option value="">Selecione um endereço para editá-lo</option>
-                    <% dataAddress.forEach( address=> { %>
-
-                        <option value="<%= address.id%>">
-                            <%=address.rua %>
-                        </option>
-
-                        <% }) %>
-                </select>
-
                 <div class="inputs-address">
                     <span>
                         <label for="tipo">Tipo</label>
@@ -71,12 +59,56 @@
                         <label for="cep">CEP</label>
                         <input type="text" id="cep" name="cep" />
                     </span>
+                    <input type="text" name="id-endereco" id="id-endereco">
                 </div>
-
             </div>
             <div class="separator light"></div>
             <button id="save-new-address" type="submit" form="form-client-address">Gravar</button>
+            <button data-aux="new-reg" type="button">Novo</button>
+
         </form>
+            <div class="table-aux">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tipo</th>
+                            <th>Rua</th>
+                            <th>Número</th>
+                            <th class="hidden" >Bairro</th>
+                            <th>Cidade</th>
+                            <th class="hidden" >CEP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% dataAddress.forEach( address => { %>
+                            <tr data-aux="row">
+                                <td data-aux="id">
+                                    <%=address.id%>
+                                </td>
+                                <td data-aux="tipo">
+                                    <%=address.tipo%>
+                                </td>
+                                <td data-aux="rua">
+                                    <%=address.rua%>
+                                </td>
+                                <td data-aux="numero">
+                                    <%=address.numero%>
+                                </td>
+                                <td  class="hidden" data-aux="bairro">
+                                    <%=address.bairro%>
+                                </td>
+                                <td data-aux="cidade">
+                                    <%=address.cidade%>
+                                </td>
+                                <td  class="hidden" data-aux="cep">
+                                    <%=address.cep%>
+                                </td>
+                            </tr>
+                        <% }) %>
+                        </tbody>
+                    </table>
+            </div>
         <div class="separator light"></div>
     </div>
     <script src="/scripts/enderecos.js"></script>

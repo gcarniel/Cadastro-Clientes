@@ -44,5 +44,4 @@ const initDb = {
     }
 }
 
-
 initDb.init()

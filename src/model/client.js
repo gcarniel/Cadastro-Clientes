@@ -21,16 +21,6 @@ module.exports = {
         return clients
     },
 
-    async getSearchedClients(clients) {
-        const db = await Database()
-
-        const SearchedClients = await db.all(`SELECT * FROM clientes WHERE nome LIKE '%${clients}%' `)
-
-        await db.close()
-
-        return SearchedClients
-    },
-
     async getClient(idClient) {
         const db = await Database()
 

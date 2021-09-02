@@ -5,7 +5,6 @@ module.exports = {
         const idClient = req.params.id
 
         const [dataNetworks] = await Network.getNetworks(idClient)
-        console.log(dataNetworks)
 
         return res.render('editar_redes', { dataNetworks })
     },
@@ -21,7 +20,6 @@ module.exports = {
     },
 
     async updateNetwork(req, res) {
-        console.log('update network')
         const idClient = req.params.id
 
         const updatedNetworks = {

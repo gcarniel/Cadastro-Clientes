@@ -10,13 +10,6 @@ module.exports = {
         return res.render('index', { clients })
     },
 
-    async showSearchedClients(req, res) {
-        console.log(req.body.searchedclients)
-        const clients = await Client.getSearchedClients('')
-
-        return res.render('index', { clients })
-    },
-
     async showClient(req, res) {
         const idClient = req.params.id
 
@@ -38,7 +31,6 @@ module.exports = {
     },
 
     async updateClient(req, res) {
-        console.log('update cliente', req.params, req.body)
         const idClient = req.params.id
 
         const updatedClient = {

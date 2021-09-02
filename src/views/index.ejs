@@ -22,7 +22,6 @@
     <div class="client-list">
         <div class="search-client">
             <input id="search" class="search-client" type="text" placeholder="Pesquisar cliente..." autocomplete="off">
-            <!-- <a href="/cliente">Buscar</a> -->
             <button class="button-search">Pesquisar</button>
         </div>
         <table>
@@ -31,8 +30,8 @@
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Nascimento</th>
-                    <th>Ações</th>
                     <th>Redes Sociais</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -45,15 +44,7 @@
                             <%=cliente.nome %>
                         </td>
                         <td>
-                            <%=cliente.nascimento %>
-                        </td>
-                        <td>
-                            <a href="/editar/<%=cliente.id %>">
-                                <img src="/images/edit.svg" alt="editar" />
-                            </a>
-                            <a href="#" class="button-delete">
-                                <img src="/images/trash.svg" alt="delete" />
-                            </a>
+                            <%= cliente.nascimento%>
                         </td>
                         <td class="networks">
                             <% if (cliente.twitter) { %>
@@ -78,6 +69,14 @@
                                     <img src="/images/instagram.png" alt="instagram" />
                                 </a>
                             <% } %>
+                        </td>
+                        <td>
+                            <a href="/editar/<%=cliente.id %>">
+                                <img src="/images/edit.svg" alt="editar" />
+                            </a>
+                            <a href="#" class="button-delete">
+                                <img src="/images/trash.svg" alt="delete" />
+                            </a>
                         </td>
                     </tr>
                     <% }) %>

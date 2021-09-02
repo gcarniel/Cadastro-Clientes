@@ -6,7 +6,6 @@ const NetworkController = require('./controller/networkController');
 const ContactController = require('./controller/contactController');
 
 routes.get('/', ClientController.showClients)
-// routes.get('/:cliente', ClientController.showSearchedClients)
 
 routes.post('/novo', ClientController.insertClient)
 routes.get('/novo', (req, res) => res.render('novo'))

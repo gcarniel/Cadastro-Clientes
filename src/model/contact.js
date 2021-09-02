@@ -64,7 +64,7 @@ module.exports = {
         ddd = '${contact.ddd}',
         numero = '${contact.numero}'
         WHERE id_cliente = ${idClient} 
-        AND id = ${idContact}`).catch((e) => { console.log('erro update') })
+        AND id = ${idContact}`)
 
         await db.close()
     },

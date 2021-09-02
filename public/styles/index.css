@@ -12,8 +12,7 @@
     flex-wrap: wrap;
 }
 
-.search-client,
-.client-list table {
+.search-client, .client-list table {
     background-color: var(--color-secondary-background);
     color: var(--color-text);
     border-radius: 10px;
@@ -42,13 +41,16 @@
     margin-left: 10px;
 }
 
-.client-list table th,
-.client-list table td {
-    padding: 5px 0;
+.client-list table tr{
+    transition: all .5s ease;
+}
+.client-list table th, .client-list table td {
+    padding: 5px 0 5px 5px;
 }
 
-.client-list table > tbody > tr:hover{
-    background-color: #999;
+.client-list table>tbody>tr:hover {
+    /* background-color: #999; */
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 10%, rgba(100, 100, 100, 0.5) 90%), #999 ;
 }
 
 .client-list img {
@@ -66,20 +68,20 @@
     padding: 10px;
 }
 
-.search-client a,
-.button-list-edit > a {
+.search-client a, .button-list-edit>a {
     color: var(--color-text);
     border: 1px solid white;
     padding: 5px;
     border-radius: 5px;
 }
 
-.button-search {
+button {
     background-color: var(--color-secondary-background);
     border: 1px solid white;
     padding: 5px;
     border-radius: 10px;
     color: var(--color-text);
     margin-left: 5px;
+    outline: none;
     cursor: pointer;
 }

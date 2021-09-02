@@ -26,18 +26,16 @@ module.exports = {
             ...req.body
         }
 
-        const idAddress = req.body['tipo-end-editar'] === '' ? 0 : req.body['tipo-end-editar']
+        const idAddress = req.body['id-endereco'] === '' ? 0 : req.body['id-endereco']
 
         const existsContact = await Address.existsContact(idClient, idAddress)
-
-        console.log(existsContact, idClient, idAddress, updatedAddress)
 
         if (existsContact) {
             await Address.updateAddress(idClient, idAddress, updatedAddress)
             return res.redirect('/editar/endereco/' + idClient)
         } else {
             await Address.insertAddress(updatedAddress, idClient)
-            return res.redirect('/')
+            return res.redirect('/editar/endereco/' + idClient)
         }
     },
 

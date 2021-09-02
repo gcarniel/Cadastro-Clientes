@@ -40,7 +40,6 @@ module.exports = {
             '${network.linkedin}',
             '${network.instagram}'
             )`)
-            .catch((e) => {console.log(`Erro ao gravar. ${e}`)})
 
         await db.close()
     },

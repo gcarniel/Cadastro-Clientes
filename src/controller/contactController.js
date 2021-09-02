@@ -26,7 +26,7 @@ module.exports = {
             ...req.body
         }
 
-        const idContact = req.body['tipo-contact-editar'] === '' ? 0 : req.body['tipo-contact-editar']
+        const idContact = req.body['id-contato'] === '' ? 0 : req.body['id-contato']
 
         const existsContact = await Contact.existsContact(idClient, idContact)
 
@@ -35,7 +35,7 @@ module.exports = {
             return res.redirect('/editar/contato/' + idClient)
         } else {
             await Contact.insertContact(updatedContact, idClient)
-            return res.redirect('/')
+            return res.redirect('/editar/contato/' + idClient)
         }
     },
 

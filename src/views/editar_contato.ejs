@@ -17,7 +17,7 @@
 
 <body>
     <div class="container">
-        <%- include('parts/header', {title: 'Adicionar Contato' , hasBack: true , button: 'Home' , urlButton: '/' }) %>
+        <%- include('parts/header', {title: 'Contatos' , hasBack: true , button: 'Home' , urlButton: '/' }) %>
     </div>
 
     <div class="client-list">
@@ -25,19 +25,7 @@
             <div class="client-contact">
 
                 <div class="separator light"></div>
-                <label for="tipo">Contatos</label>
-                <select name="tipo-contact-editar" id="tipo-contact-editar">
-                    <option value="">Selecione um contato para editá-lo</option>
-
-                    <% dataContact.forEach( contact=> { %>
-                        <option value="<%= contact.id%>">
-                            <%=contact.ddd %>
-                                <%=contact.numero %>
-                        </option>
-                        <% }) %>
-
-                </select>
-
+                
                 <div class="inputs-contact">
                     <span>
                         <label for="tipo">Tipo</label>
@@ -57,12 +45,45 @@
                         <input type="text" id="numero" name="numero" maxlength="10" />
                     </span>
                 </div>
-
+                <input type="text" name="id-contato" id="id-contato">
             </div>
             <div class="separator light"></div>
             <button id="save-new-contact" type="submit" form="form-client-contact">Gravar</button>
+            <button data-aux="new-reg" type="button">Novo</button>
+
         </form>
 
+        <div class="table-aux">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tipo</th>
+                        <th>DDD</th>
+                        <th>Número</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% dataContact.forEach( contact=> { %>
+                        <tr data-aux="row">
+                            <td data-aux="id">
+                                <%= contact.id%>
+                            </td>
+                            <td data-aux="tipo">
+                                <%= contact.tipo%>
+                            </td>
+                            <td data-aux="ddd">
+                                <%= contact.ddd%>
+                            </td>
+                            <td data-aux="numero">
+                                <%= contact.numero%>
+                            </td>
+                        </tr>
+                    <% }) %>
+                    </tbody>
+                </table>
+        </div>
+        
         <script src="/scripts/contatos.js"></script>
 </body>
 

@@ -6,8 +6,6 @@ module.exports = {
 
         const [address] = await db.all(`SELECT COUNT(*) as registros FROM enderecos WHERE id_cliente = ${idClient} AND id = ${idAddress}`)
 
-        console.log(address, (`SELECT COUNT(*) as registros FROM enderecos WHERE id_cliente = ${idClient} AND id = ${idAddress}`))
-
         await db.close()
 
         if (address.registros > 0) {

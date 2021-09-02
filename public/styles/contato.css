@@ -21,3 +21,15 @@
 .inputs-contact select {
     width: 100%;
 }
+
+#id-contato {
+    display: none;
+}
+
+.table-aux {
+    margin-top: 10px;
+}
+
+.table-aux table tr {
+    cursor: pointer;
+}
