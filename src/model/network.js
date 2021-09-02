@@ -32,13 +32,13 @@ module.exports = {
             twitter,
             facebook,
             linkedin,
-            instagran
+            instagram
             ) VALUES (
             ${idClient},
             '${network.twitter}',
             '${network.facebook}',
             '${network.linkedin}',
-            '${network.instagran}'
+            '${network.instagram}'
             )`)
             .catch((e) => {console.log(`Erro ao gravar. ${e}`)})
 
@@ -52,7 +52,7 @@ module.exports = {
         twitter = '${network.twitter}',
         facebook = '${network.facebook}',
         linkedin = '${network.linkedin}',
-        instagran = '${network.instagran}'
+        instagram = '${network.instagram}'
         WHERE id_cliente = ${idClient}`)
 
         await db.close()

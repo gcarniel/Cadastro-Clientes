@@ -8,6 +8,7 @@
     flex-wrap: wrap;
 }
 
+.search-client,
 .client-list table {
     background-color: var(--color-secondary-background);
     color: var(--color-text);
@@ -15,6 +16,25 @@
     width: 70vw;
     text-align: center;
     border-collapse: collapse;
+}
+
+.search-client {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.search-client input {
+    width: 80%;
+}
+
+.networks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.networks a {
+    margin-left: 10px;
 }
 
 .client-list table th,
@@ -41,7 +61,9 @@
     padding: 10px;
 }
 
+.search-client a,
 .button-list-edit > a {
+    color: var(--color-text);
     border: 1px solid white;
     padding: 5px;
     border-radius: 5px;

@@ -16,10 +16,15 @@
 
 <body>
     <div class="container">
-        <%- include('parts/header', {title: 'Clientes' , button: '+ Cliente' , urlButton: '/novo' }) %>
+        <%- include('parts/header', {title: 'Clientes', hasBack: false, button: '+ Cliente' , urlButton: '/novo' }) %>
     </div>
 
     <div class="client-list">
+        <div class="search-client">
+            <input name="searchedclients" type="text" placeholder="Pesquisar cliente...">
+            <!-- <a href="/cliente">Buscar</a> -->
+            <button>Pesquisar</button>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -27,6 +32,7 @@
                     <th>Nome</th>
                     <th>Nascimento</th>
                     <th>Ações</th>
+                    <th>Redes Sociais</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,6 +54,30 @@
                             <a href="#" class="button-delete">
                                 <img src="/images/trash.svg" alt="delete" />
                             </a>
+                        </td>
+                        <td class="networks">
+                            <% if (cliente.twitter) { %>
+                                <a href="<%= cliente.twitter %>" target="_blank">
+                                    <img src="/images/twitter.png" alt="twitter" />
+                                </a>
+                            <% } %>
+
+                            <% if (cliente.facebook) { %>
+                                <a href="<%= cliente.facebook %>" target="_blank">
+                                    <img src="/images/facebook.png" alt="facebook" />
+                                </a>
+                            <% } %>
+                            <% if (cliente.linkedin) { %>
+                                <a href="<%= cliente.linkedin %>" target="_blank">
+                                    <img src="/images/linkedin.png" alt="linkedin" />
+                                </a>
+                            <% } %>
+
+                            <% if (cliente.instagram) { %>
+                                <a href="<%= cliente.instagram %>" target="_blank">
+                                    <img src="/images/instagram.png" alt="instagram" />
+                                </a>
+                            <% } %>
                         </td>
                     </tr>
                     <% }) %>

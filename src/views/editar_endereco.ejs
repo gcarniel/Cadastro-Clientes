@@ -18,7 +18,7 @@
 
 <body>
     <div class="container">
-        <%- include('parts/header', {title: 'Editando Endereços' , button: 'Home' , urlButton: '/' }); %>
+        <%- include('parts/header', {title: 'Adicionar Endereço' , hasBack: true, button: 'Home' , urlButton: '/' }); %>
     </div>
 
     <div class="client-list">
@@ -28,7 +28,7 @@
                 <div class="separator light"></div>
                 <label for="tipo">Endereços</label>
                 <select name="tipo-end-editar" id="tipo-end-editar">
-                    <option value="">Selecione um Endereço</option>
+                    <option value="">Selecione um endereço para editá-lo</option>
                     <% dataAddress.forEach( address=> { %>
 
                         <option value="<%= address.id%>">
@@ -74,6 +74,7 @@
                 </div>
 
             </div>
+            <div class="separator light"></div>
             <button id="save-new-address" type="submit" form="form-client-address">Gravar</button>
         </form>
         <div class="separator light"></div>

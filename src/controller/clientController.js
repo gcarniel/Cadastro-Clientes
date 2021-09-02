@@ -1,10 +1,18 @@
 const Client = require('../model/client')
 const Address = require('../model/address')
 const Network = require('../model/network')
+const Contact = require('../model/contact')
 
 module.exports = {
     async showClients(req, res) {
         const clients = await Client.getClients()
+
+        return res.render('index', { clients })
+    },
+
+    async showSearchedClients(req, res) {
+        console.log(req.body.searchedclients)
+        const clients = await Client.getSearchedClients('')
 
         return res.render('index', { clients })
     },
@@ -46,6 +54,9 @@ module.exports = {
         const idClient = req.params.id
 
         await Client.deleteClient(idClient)
+        await Address.deleteAddress(idClient)
+        await Contact.deleteContact(idClient)
+        await Network.deleteNetwork(idClient)
 
         return res.redirect('/')
     }

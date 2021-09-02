@@ -17,7 +17,7 @@
 
 <body>
     <div class="container">
-        <%- include('parts/header', {title: 'Editando Contato' , button: 'Home' , urlButton: '/' }) %>
+        <%- include('parts/header', {title: 'Adicionar Contato' , hasBack: true , button: 'Home' , urlButton: '/' }) %>
     </div>
 
     <div class="client-list">
@@ -27,7 +27,7 @@
                 <div class="separator light"></div>
                 <label for="tipo">Contatos</label>
                 <select name="tipo-contact-editar" id="tipo-contact-editar">
-                    <option value="">Selecione um Contato</option>
+                    <option value="">Selecione um contato para editá-lo</option>
 
                     <% dataContact.forEach( contact=> { %>
                         <option value="<%= contact.id%>">
@@ -59,6 +59,7 @@
                 </div>
 
             </div>
+            <div class="separator light"></div>
             <button id="save-new-contact" type="submit" form="form-client-contact">Gravar</button>
         </form>
 

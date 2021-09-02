@@ -17,7 +17,7 @@
 
 <body>
     <div class="container">
-        <%- include('parts/header', {title: 'Endereço do Cliente' , button: 'Home' , urlButton: '/' }) %>
+        <%- include('parts/header', {title: 'Endereço do Cliente', hasBack: false, button: 'Home' , urlButton: '/' }) %>
     </div>
 
     <div class="client-list">
@@ -58,7 +58,7 @@
                     </span>
                     <span>
                         <label for="cep">CEP</label>
-                        <input type="text" id="cep" name="cep" />
+                        <input type="text" id="cep" name="cep" maxlength="10"/>
                     </span>
                 </div>
             </div>
@@ -66,7 +66,7 @@
             <button type="submit" form="form-client">Gravar</button>
         </form>
     </div>
-    <!-- <script src="scripts/enderecos.js"></script> -->
+    <script src="/scripts/mascaras.js"></script>
 </body>
 
 </html>

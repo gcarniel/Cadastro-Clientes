@@ -17,7 +17,7 @@
 
 <body>
     <div class="container">
-        <%- include('parts/header', {title: 'Editando Redes Sociais' , button: 'Home' , urlButton: '/' }) %>
+        <%- include('parts/header', {title: 'Editando Redes Sociais', hasBack: true, button: 'Home' , urlButton: '/' }) %>
     </div>
 
     <div class="client-list">
@@ -42,8 +42,8 @@
                             placeholder="cole link do linkedin aqui" />
                     </span>
                     <span>
-                        <label for="instagran">Instagran</label>
-                        <input type="text" id="instagran" value="<%= dataNetworks.instagran %>" name="instagran"
+                        <label for="instagram">Instagram</label>
+                        <input type="text" id="instagram" value="<%= dataNetworks.instagram %>" name="instagran"
                             placeholder="cole link do ins aqui" />
                     </span>
                 </div>

@@ -90,13 +90,10 @@ module.exports = {
         await db.close()
     },
 
-    async deleteAddress(idAddress) {
+    async deleteAddress(idClient) {
         const db = await Database()
 
-        const { id } = await this.getID()
-        const idClient = id
-
-        await db.run(`DELETE FROM enderecos WHERE id_cliente = ${idClient} AND id = ${idAddress}`)
+        await db.run(`DELETE FROM enderecos WHERE id_cliente = ${idClient}`)
 
         await db.close()
     },

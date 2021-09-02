@@ -72,9 +72,7 @@ module.exports = {
     async deleteContact(idContact) {
         const db = await Database()
 
-        const { id } = await this.getID()
-
-        await db.run(`DELETE FROM telefones WHERE id_cliente = ${id} AND id = ${idContact}`)
+        await db.run(`DELETE FROM telefones WHERE id_cliente = ${idContact}`)
 
         await db.close()
     },

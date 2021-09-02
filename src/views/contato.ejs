@@ -17,11 +17,11 @@
 
 <body>
     <div class="container">
-        <%- include('parts/header', {title: 'Contato do Cliente' , button: 'Home' , urlButton: '/' }) %>
+        <%- include('parts/header', {title: 'Contato do Cliente' , hasBack: false, button: 'Home' , urlButton: '/' }) %>
     </div>
 
     <div class="client-list">
-        <form id="form-client" method="POST" >
+        <form id="form-client" method="POST">
             <div class="client-contact">
 
                 <div class="separator light"></div>
@@ -43,15 +43,14 @@
                     </span>
                     <span>
                         <label for="numero">Número</label>
-                        <input type="text" id="numero" name="numero" maxlength="10" />
+                        <input type="text" id="numero" name="numero" maxlength="12" />
                     </span>
                 </div>
             </div>
             <div class="separator light"></div>
             <button type="submit" form="form-client">Gravar</button>
-            </form>
-
-            <!-- <script src="scripts/contatos.js"></script> -->
+        </form>
+        <script src="/scripts/mascaras.js"></script>
 </body>
 
 </html>

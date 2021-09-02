@@ -1,14 +1,12 @@
-// const saveAndNewAddress = document.querySelector('#save-new-address')
-// const formAddress = document.querySelector('#form-client')
-
 const tipo = document.querySelector('#tipo-end-editar')
+const title = document.querySelector('.page-header > h1')
+
 tipo.addEventListener('change', () => {
     console.log(tipo.value)
+
+    if (tipo.value === '') {
+        title.textContent = "Adicionar Contato"
+    } else {
+        title.textContent = "Editando Contato"
+    }
 })
-
-
-// saveAndNewAddress.addEventListener('click', () => {
-//     console.log('endereco')
-//     formAddress.setAttribute('method', 'GET')
-//     formAddress.setAttribute('action', '/contato')
-// })

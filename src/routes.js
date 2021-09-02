@@ -6,6 +6,7 @@ const NetworkController = require('./controller/networkController');
 const ContactController = require('./controller/contactController');
 
 routes.get('/', ClientController.showClients)
+// routes.get('/:cliente', ClientController.showSearchedClients)
 
 routes.post('/novo', ClientController.insertClient)
 routes.get('/novo', (req, res) => res.render('novo'))
@@ -28,16 +29,5 @@ routes.get('/redes', (req, res) => res.render('redes'))
 routes.post('/redes', NetworkController.insertNetwork)
 routes.get('/editar/redes/:id', NetworkController.showNetwork)
 routes.post('/editar/redes/:id', NetworkController.updateNetwork)
-
-
-
-
-// routes.post('/job', JobController.save)
-// routes.get('/job/:id', JobController.show)
-// routes.post('/job/:id', JobController.update)
-// routes.post('/job/delete/:id', JobController.delete)
-// routes.get('/profile', ProfileController.index)
-// routes.post('/profile', ProfileController.update)
-
 
 module.exports = routes;

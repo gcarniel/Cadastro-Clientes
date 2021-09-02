@@ -3,6 +3,10 @@
         <h1>
             <%= title %>
         </h1>
+        <% if (hasBack){ %>
+            <a href="javascript:history.back()">Voltar</a>
+        <% } %>
+
         <a href="<%- urlButton %>">
             <%= button %>
         </a>
