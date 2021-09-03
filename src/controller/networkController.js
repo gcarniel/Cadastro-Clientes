@@ -1,6 +1,10 @@
 const Network = require('../model/network')
 
 module.exports = {
+    index(req, res) {
+        return res.render('redes')
+    },
+
     async showNetwork(req, res) {
         const idClient = req.params.id
 

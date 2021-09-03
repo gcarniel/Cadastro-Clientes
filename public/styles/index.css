@@ -42,15 +42,15 @@
 }
 
 .client-list table tr{
-    transition: all .5s ease;
+    transition: all .7s ease;
 }
 .client-list table th, .client-list table td {
     padding: 5px 0 5px 5px;
 }
 
 .client-list table>tbody>tr:hover {
-    /* background-color: #999; */
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 10%, rgba(100, 100, 100, 0.5) 90%), #999 ;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 10%, 
+    rgba(100, 100, 100, 0.5) 90%), #999 ;
 }
 
 .client-list img {

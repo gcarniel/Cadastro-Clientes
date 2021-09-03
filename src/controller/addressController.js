@@ -1,6 +1,10 @@
 const Address = require('../model/address')
 
 module.exports = {
+    index(req, res) {
+        return res.render('endereco')
+    },
+
     async showAddress(req, res) {
         const idClient = req.params.id
 

@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-/* custom vars */
-
 :root {
     --color-primary-background: #303035;
     --color-secondary-background: #49494e;

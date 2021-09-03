@@ -4,6 +4,9 @@ const Network = require('../model/network')
 const Contact = require('../model/contact')
 
 module.exports = {
+    index(req, res) {
+        return res.render('novo')
+    },
     async showClients(req, res) {
         const clients = await Client.getClients()
 

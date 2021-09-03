@@ -1,6 +1,10 @@
 const Contact = require('../model/contact')
 
 module.exports = {
+    index (req, res) {
+        return res.render('contato')
+    },
+
     async showContact(req, res) {
         const idClient = req.params.id
 
